@@ -8,6 +8,9 @@ Resource        ../resources/base.resource
 ${Se_cadastre_agora!}    xpath=//android.widget.Button[@content-desc="Se cadastre agora!"]
 ${Sou_cliente}         xpath=//android.widget.TextView[@text="Sou cliente"]
 ${Termos_e_Condições}  xpath=//android.widget.TextView[@text="Termos e Condições"]
+${Cadastre_se}        xpath=//android.widget.TextView[@text="Cadastre-se"]
+${Continuar}          xpath=//android.widget.TextView[@text="Continuar"]
+${checkbox}          xpath=//android.widget.CheckBox
 
 *** Test Cases ***
 Pular cadastro 
@@ -25,21 +28,13 @@ Entrar no termos e condições
     Sleep    1
     Click Element        ${Termos_e_Condições}
 
-
-
-
-
-
-
-
-
 Deve errar ao cadastrar com cpf faltando caracteres
     Start session
     Click Text           Pular
     Sleep    1
-    Click Element        xpath=//android.widget.Button[@content-desc="Se cadastre agora!"]
+    Click Element        ${Se_cadastre_agora!}
     Sleep    1
-    Click Element        xpath=//android.widget.TextView[@text="Sou cliente"]
+    Click Element        ${Sou_cliente}
     Sleep    1
     Input Text            xpath=//android.widget.EditText[@text="Nome"]    Jose Carlos
     Sleep    1
@@ -53,17 +48,17 @@ Deve errar ao cadastrar com cpf faltando caracteres
     Sleep    1
     Input Text            xpath=//android.widget.EditText[@text="Confirmar Senha"]    12345678lJ@
     Sleep    1
-    Click Element         xpath=//android.widget.CheckBox
+    Click Element         ${checkbox} 
     Sleep    1
-    Click Element         xpath=//android.widget.TextView[@text="Cadastre-se"]
+    Click Element         ${Cadastre_se}
 
 Deve errar ao cadastrar com senha acima de 20 caracteres
     Start session
     Click Text           Pular
     Sleep    1
-    Click Element        xpath=//android.widget.Button[@content-desc="Se cadastre agora!"]
+    Click Element        ${Se_cadastre_agora!}
     Sleep    1
-    Click Element        xpath=//android.widget.TextView[@text="Sou cliente"]
+    Click Element        ${Sou_cliente}
     Sleep    1
     Input Text            xpath=//android.widget.EditText[@text="Nome"]    Jose Carlos
     Sleep    1
@@ -77,9 +72,9 @@ Deve errar ao cadastrar com senha acima de 20 caracteres
     Sleep    1
     Input Text            xpath=//android.widget.EditText[@text="Confirmar Senha"]    1234567891011121314151617181920
     Sleep    1
-    Click Element         xpath=//android.widget.CheckBox
+    Click Element         ${checkbox} 
     Sleep    1
-    Click Element         xpath=//android.widget.TextView[@text="Cadastre-se"]
+    Click Element         ${Cadastre_se}
     Sleep    1
 
 
@@ -89,9 +84,9 @@ Deve cadastrar com cliente com sucesso
     Start session
     Click Text           Pular
     Sleep    1
-    Click Element        xpath=//android.widget.Button[@content-desc="Se cadastre agora!"]
+    Click Element        ${Se_cadastre_agora!}
     Sleep    1
-    Click Element        xpath=//android.widget.TextView[@text="Sou cliente"]
+    Click Element        ${Sou_cliente}
     Sleep    1
     Input Text            xpath=//android.widget.EditText[@text="Nome"]    Jose Carlos
     Sleep    1
@@ -105,11 +100,11 @@ Deve cadastrar com cliente com sucesso
     Sleep    1
     Input Text            xpath=//android.widget.EditText[@text="Confirmar Senha"]    12345678lJ@
     Sleep    1
-    Click Element         xpath=//android.widget.CheckBox
+    Click Element         ${checkbox} 
     Sleep    1
-    Click Element         xpath=//android.widget.TextView[@text="Cadastre-se"]
+    Click Element         ${Cadastre_se}
     Sleep    1
-    Click Element         xpath=//android.widget.TextView[@text="Continuar"]
+    Click Element         ${Continuar}
     Sleep    1
     Click Element    xpath=//android.widget.TextView[@text="Alimentação"]
     Click Element    xpath=//android.widget.TextView[@text="Petshop"]
@@ -124,7 +119,7 @@ Deve cadastrar com cliente com sucesso
     Click Element    xpath=//android.widget.TextView[@text="Perfumaria"]
     Click Element    xpath=//android.widget.TextView[@text="Vestuário e calçados"]
     Click Element    xpath=//android.widget.TextView[@text="Informática e eletrónicos"]
-    Click Element    xpath=//android.widget.TextView[@text="Continuar"]
+    Click Element    ${Continuar}
 
 
 
